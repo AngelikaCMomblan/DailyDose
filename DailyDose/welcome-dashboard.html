@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Dose Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Daily Dose</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="login.html" id="logout">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAShlTvPNiCjzP_7J9EcRWx4kID2gz4zM0LeU6Q4bnRTo8AYMthtJHFk1L&s=10" alt="To-Do List">
+      <h2>To-Do List</h2>
+      <p>Stay organized by tracking your daily tasks.</p>
+      <a href="to-do.html"><button>Open</button></a>
+    </div>
+
+    <div class="feature-card">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?fit=crop&w=600&q=80" alt="Motivational Quote">
+      <h2>Daily Quote</h2>
+      <p>Get inspired every day with a motivational quote.</p>
+      <a href="daily.html"><button>Open</button></a>
+    </div>
+
+    <div class="feature-card">
+      <img src="https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?fit=crop&w=600&q=80" alt="Weather Widget">
+      <h2>Weather</h2>
+      <p>Check current weather conditions based on your location.</p>
+      <a href="weather.html"><button>Open</button></a>
+    </div>
+
+    <div class="feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5gjA-EYtZXzodTEBK64v1UgkY1-1vHhZYPXGojumSrnFFx7NrNLuqsAgK&s=10" alt="Habit Tracker">
+      <h2>Habit Tracker</h2>
+      <p>Track your daily habits to stay consistent and productive.</p>
+      <a href="habit.html"><button>Open</button></a>
+    </div>
+
+    <div class="feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnyTm9-8oYlwqyHa1ZPStfDV_CtjNk2PEWCafYpEU_kBrGCRjJPAaDXYFO&s=10" alt="Mood Tracker">
+      <h2>Mood Tracker</h2>
+      <p>Record your daily moods and spot trends over time.</p>
+      <a href="mood.html"><button>Open</button></a>
+    </div>
+
+    <div class="feature-card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjOE7DLRflGcy8-uUDV4eiBJ2XmstHgpxhxnVAzLribWj_bsOo6Y6Q6f4M&s=10" alt="Journal">
+      <h2>Daily Journal</h2>
+      <p>Write and reflect in your personal journal space.</p>
+      <a href="journal.html"><button>Write</button></a>
+    </div>
+  </main>
+
+  <section class="about-us">
+    <h2>About Us</h2>
+    <p>
+      Daily Dose is your personal productivity companion. We aim to promote mindfulness, organization,
+      and well-being through a beautifully designed, easy-to-use dashboard that empowers your daily life.
+    </p>
+    <p>
+      Whether you're tracking habits, journaling, or checking the weather, Daily Dose provides all the tools
+      you need in one calm, cohesive space.
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Daily Dose. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Check if user is logged in
+    const isLoggedIn = localStorage.getItem("loggedIn");
+    const userFullName = localStorage.getItem("userFullName");
+
+    // If not logged in, redirect to login page
+    if (!isLoggedIn) {
+      window.location.href = "login.html"; // Redirect to login
+    }
+
+    // Show welcome message if logged in
+    document.querySelector('header').innerHTML = `
+      <h1>Welcome, ${userFullName}!</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="about.html">About</a>
+        <a href="#" id="logout">Logout</a>
+      </nav>
+    `;
+
+    // Logout functionality with confirmation popup
+    document.getElementById("logout").addEventListener("click", function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      const confirmLogout = window.confirm("Are you sure you want to log out?");
+      
+      if (confirmLogout) {
+        // Clear localStorage and redirect to homepage
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("userFullName");
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("userPassword");
+        window.location.href = "index.html"; // Redirect to homepage
+      }
+    });
+  </script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

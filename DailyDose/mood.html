@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mood Tracker</title>
+  <link rel="stylesheet" href="styles/mood.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Daily Dose</h1>
+    <nav>
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="index.html" class="nav-link">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Track Your Mood</h2>
+    <p>Log how you're feeling today. Select your mood and add a description to track your emotional progress.</p>
+    
+    <form id="moodForm">
+      <div class="mood-options">
+        <label for="happy">
+          <input type="radio" id="happy" name="mood" value="Happy" />
+          <span>😄 Happy</span>
+        </label>
+        <label for="sad">
+          <input type="radio" id="sad" name="mood" value="Sad" />
+          <span>😢 Sad</span>
+        </label>
+        <label for="angry">
+          <input type="radio" id="angry" name="mood" value="Angry" />
+          <span>😡 Angry</span>
+        </label>
+        <label for="neutral">
+          <input type="radio" id="neutral" name="mood" value="Neutral" />
+          <span>😐 Neutral</span>
+        </label>
+        <label for="inlove">
+          <input type="radio" id="inlove" name="mood" value="Inlove" />
+          <span>🥰 In Love</span>
+        </label>
+        <label for="excited">
+          <input type="radio" id="excited" name="mood" value="Excited" />
+          <span>🤩 Excited</span>
+        </label>
+      </div>
+
+      <textarea id="moodDetails" placeholder="Write about your mood today..." rows="4"></textarea>
+      <button type="submit">Log Mood</button>
+    </form>
+
+    <div id="moodLog" style="margin-top: 3rem;">
+      <h2>Your Mood Logs</h2>
+      <div id="logContainer">
+        <!-- Mood logs will be displayed here -->
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Daily Dose. All rights reserved.</p>
+  </footer>
+
+  <script src="js/mood.js"></script>
+</body>
+</html>

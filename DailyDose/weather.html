@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather - Daily Dose</title>
+  <link rel="stylesheet" href="styles/weather.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <header>
+    <h1>Daily Dose</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="index.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="weather-section">
+      <h2>Today's Weather</h2>
+      <p>See the current weather in your location</p>
+      <div class="weather-container" id="weather-container">
+        <div id="weather-icon"></div>
+        <div id="weather-info">
+          <h3 id="location">Locating...</h3>
+          <p id="description"></p>
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+        </div>
+      </div>
+    </section>
+    <!-- Extra Content for filling space -->
+    <section class="extra-content">
+      <h3>Weather Tips</h3>
+      <p>Make sure to dress accordingly to the current weather. Stay hydrated and protect yourself from the sun or cold!</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Daily Dose. All rights reserved.</p>
+  </footer>
+
+  <script src="js/weather.js"></script>
+</body>
+</html>

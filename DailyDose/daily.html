@@ -1,0 +1,325 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Dose - Daily Quote</title>
+  <link rel="stylesheet" href="styles/dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    /* Center layout and lift it */
+    .quote-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5vh;
+      min-height: 60vh;
+    }
+
+    .quote-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .quote-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #8a678f;
+      font-weight: bold;
+    }
+
+    .quote-heading p {
+      font-family: 'Poppins', sans-serif;
+      color: #5d4c5f;
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+    }
+
+    .quote-box {
+      background: #fff8f5;
+      border-radius: 20px;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-size: 1.3rem;
+      font-family: 'Playfair Display', serif;
+      color: #6a5a6e;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-btn {
+      padding: 0.8rem 1.5rem;
+      background-color: #d9b8c4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s ease;
+    }
+
+    .quote-btn:hover {
+      background-color: #c296ad;
+    }
+
+    /* Flower animation */
+    .footer-flowers {
+      position: relative;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 0;
+      width: 28px;
+      height: 28px;
+      background: url('https://cdn-icons-png.flaticon.com/512/765/765403.png') no-repeat center/contain;
+      animation: floatUp 8s infinite linear;
+      opacity: 0.4;
+    }
+
+    .flower:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .flower:nth-child(3) { left: 40%; animation-delay: 2s; }
+    .flower:nth-child(4) { left: 60%; animation-delay: 3s; }
+    .flower:nth-child(5) { left: 80%; animation-delay: 4s; }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(60px) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daily Dose</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quote-container">
+      <div class="quote-heading">
+        <h2>Your Daily Quote</h2>
+        <p>A little spark of inspiration for your day!</p>
+      </div>
+      <div class="quote-box">
+        <h2 class="quote-text" id="quote">Click the button below to get your quote!</h2>
+        <button class="quote-btn" id="quoteBtn">Get New Quote</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Daily Dose. All rights reserved.</p>
+    <div class="footer-flowers">
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+    </div>
+  </footer>
+
+  <script>
+    const quotes = [
+      "The only way to do great work is to love what you do. – Steve Jobs",
+      "Believe you can and you're halfway there. – Theodore Roosevelt",
+      "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+      "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+      "It always seems impossible until it’s done. – Nelson Mandela"
+    ];
+
+    function getRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote').textContent = quotes[randomIndex];
+    }
+
+    document.getElementById('quoteBtn').addEventListener('click', getRandomQuote);
+    getRandomQuote();
+  </script>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Dose - Daily Quote</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet"/>
+  <style>
+    /* Center layout and lift it */
+    .quote-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-top: 5vh;
+      min-height: 60vh;
+    }
+
+    .quote-heading {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .quote-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #8a678f;
+      font-weight: bold;
+    }
+
+    .quote-heading p {
+      font-family: 'Poppins', sans-serif;
+      color: #5d4c5f;
+      font-size: 1.1rem;
+      margin-top: 0.3rem;
+    }
+
+    .quote-box {
+      background: #fff8f5;
+      border-radius: 20px;
+      padding: 2rem 3rem;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-size: 1.3rem;
+      font-family: 'Playfair Display', serif;
+      color: #6a5a6e;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-btn {
+      padding: 0.8rem 1.5rem;
+      background-color: #d9b8c4;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+      transition: background 0.3s ease;
+    }
+
+    .quote-btn:hover {
+      background-color: #c296ad;
+    }
+
+    /* Flower animation */
+    .footer-flowers {
+      position: relative;
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 0;
+      width: 28px;
+      height: 28px;
+      background: url('https://cdn-icons-png.flaticon.com/512/765/765403.png') no-repeat center/contain;
+      animation: floatUp 8s infinite linear;
+      opacity: 0.4;
+    }
+
+    .flower:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .flower:nth-child(3) { left: 40%; animation-delay: 2s; }
+    .flower:nth-child(4) { left: 60%; animation-delay: 3s; }
+    .flower:nth-child(5) { left: 80%; animation-delay: 4s; }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(60px) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Daily Dose</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="logout.html">Logout</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quote-container">
+      <div class="quote-heading">
+        <h2>Your Daily Quote</h2>
+        <p>A little spark of inspiration for your day!</p>
+      </div>
+      <div class="quote-box">
+        <h2 class="quote-text" id="quote">Click the button below to get your quote!</h2>
+        <button class="quote-btn" id="quoteBtn">Get New Quote</button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Daily Dose. All rights reserved.</p>
+    <div class="footer-flowers">
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+    </div>
+  </footer>
+<script src="js/auth.js"></script>
+  <script>
+  const quote = [
+    "The only way to do great work is to love what you do. – Steve Jobs",
+    "Believe you can and you're halfway there. – Theodore Roosevelt",
+    "Success is not final, failure is not fatal: It is the courage to continue that counts. – Winston Churchill",
+    "Don’t watch the clock; do what it does. Keep going. – Sam Levenson",
+    "It always seems impossible until it’s done. – Nelson Mandela",
+    "Start where you are. Use what you have. Do what you can. – Arthur Ashe",
+    "You are never too old to set another goal or to dream a new dream. – C.S. Lewis",
+    "Push yourself, because no one else is going to do it for you.",
+    "Great things never come from comfort zones.",
+    "Little by little, day by day, what is meant for you will find its way."
+  ];
+
+  function getRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    document.getElementById('quote').textContent = quotes[randomIndex];
+  }
+
+  document.getElementById('quoteBtn').addEventListener('click', getRandomQuote);
+  getRandomQuote();
+  </script>
+</body>
+</html>
