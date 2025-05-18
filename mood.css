@@ -1,0 +1,179 @@
+/* Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom right, #f3e7e9, #e3d4f3);
+  color: #3e2f40;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Header */
+header {
+  background-color: #bba0ca;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid #a789b4;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #fbe9ec;
+}
+
+/* Main Content */
+main {
+  padding: 2rem;
+  flex: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+main h2 {
+  font-family: 'Playfair Display', serif;
+  color: #8a678f;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+main p {
+  font-family: 'Poppins', sans-serif;
+  color: #5b4c55;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Form Styling */
+form {
+  background: #fff8f5;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.07);
+  border: 1px solid #f0dce2;
+}
+
+.mood-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.mood-options label {
+  font-family: 'Poppins', sans-serif;
+  background: #f5edf3;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 1 1 45%;
+  text-align: center;
+  transition: background 0.3s ease;
+  font-size: 1rem;
+  border: 1px solid #e0cadc;
+}
+
+.mood-options label:hover {
+  background: #e8d6ea;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #d3bcd4;
+  margin-top: 1rem;
+  font-family: 'Poppins', sans-serif;
+  resize: vertical;
+  min-height: 100px;
+}
+
+button[type="submit"] {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.5rem;
+  background-color: #d9b8c4;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #c296ad;
+}
+
+/* Mood Logs */
+#moodLog {
+  margin-top: 3rem; /* Adding space between form and mood logs */
+}
+
+.mood-log {
+  background: #f8e3f5;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  border: 1px solid #d3bcd4;
+}
+
+.mood-log p {
+  font-family: 'Poppins', sans-serif;
+  color: #5b4c55;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee6f1;
+  font-size: 0.9rem;
+  color: #6a5a6e;
+  border-top: 1px solid #cbbad3;
+}
+.delete-log-btn {
+  background-color: #ff4d4f;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+
+.delete-log-btn:hover {
+  background-color: #d9363e;
+}

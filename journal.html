@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Journal - Daily Dose</title>
+  <link rel="stylesheet" href="styles/journal.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>Daily Dose - Journal</h1>
+    <nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="about.html">About</a>
+      <a href="#">Logout</a>
+    </nav>
+  </header>
+
+  <main class="journal-main">
+    <section class="journal-container">
+      <h2>Write Your Journal Entry</h2>
+      <form action="#" method="POST">
+        <div class="journal-date">
+          <label for="journal-date">Date:</label>
+          <input type="date" id="journal-date" name="journal-date" required>
+        </div>
+
+        <div class="journal-entry">
+          <textarea id="journal-text" rows="10" placeholder="Write your thoughts here..." required></textarea>
+        </div>
+
+        <button type="submit" class="save-btn">Save Entry</button>
+      </form>
+
+      <div class="saved-journals">
+        <h3>Previous Entries</h3>
+        <ul id="journal-list">
+          <!-- Journal entries will be dynamically listed here -->
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Daily Dose. All rights reserved.</p>
+  </footer>
+<script src="js/auth.js"></script>
+  <script>
+    // JavaScript to handle saving journal entries and displaying them
+    const form = document.querySelector('form');
+    const journalDateInput = document.getElementById('journal-date');
+    const journalTextArea = document.getElementById('journal-text');
+    const journalList = document.getElementById('journal-list');
+
+    // Event listener for form submission
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent form from refreshing the page
+
+      const journalDate = journalDateInput.value;
+      const journalText = journalTextArea.value;
+
+      if (journalDate && journalText) {
+        // Create a new list item for the journal entry
+        const newJournalEntry = document.createElement('li');
+        newJournalEntry.innerHTML = `<strong>${journalDate}</strong>: <p>${journalText}</p>`;
+        journalList.appendChild(newJournalEntry);
+
+        // Clear the form fields after submission
+        journalDateInput.value = '';
+        journalTextArea.value = '';
+      }
+    });
+  </script>
+</body>
+</html>
